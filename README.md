@@ -1,4 +1,4 @@
-# IPL-Live-updates
+# Cricket-Live-updates
 [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
 
 ## Description
