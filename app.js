@@ -9,7 +9,7 @@ async function pingCricbuzz() {
   let matches = JSON.parse(response).matches;
   let iplMatch = [];
   for (let i in matches) {
-    if (matches[i].series.id == 2810) {
+    if (matches[i].series.id == 2697) {
       iplMatch.push(matches[i]);
     }
   }
@@ -23,8 +23,8 @@ async function pingCricbuzz() {
       batsmenArr = matchinProgress.score.batsman,
       bowlerArr = matchinProgress.score.bowler,
       team_1 = matchinProgress.team1.name,
-      team_2 = matchinProgress.team2.name,
-      overState = matchinProgress.score["prev_overs"];
+      team_2 = matchinProgress.team2.name;
+    let overState=matchinProgress.score["prev_overs"];
     overState = overState.length>12?overState.substr(overState.length-12):overState;
     overState = overState.replace("|","");
     // console.log(team_1,team_2)
@@ -71,9 +71,9 @@ async function pingCricbuzz() {
     );
   }
 }
+pingCricbuzz();
 try {
   setInterval(pingCricbuzz, 1 * 60000);
 } catch (err) {
   console.log(err);
 }
-pingCricbuzz();
